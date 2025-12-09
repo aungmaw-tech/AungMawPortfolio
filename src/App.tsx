@@ -8,6 +8,7 @@ import { Education } from "./components/Education";
 import { Courses } from "./components/Courses";
 import { Certificates } from "./components/Certificates";
 import { Footer } from "./components/Footer";
+import { ChatBot } from "./components/ChatBot";
 import "./styles/globals.css";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <Certificates />
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 }
