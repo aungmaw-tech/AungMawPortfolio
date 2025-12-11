@@ -14,7 +14,7 @@ export function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const GEMINI_API_KEY = 'AIzaSyCd7di_jsmt_b_d5_aEAhneh56UrM-a9gs';
+  const GEMINI_API_KEY = 'AIzaSyDpv_Qlf2OcLJZUdbMQKnisdqc0tapSqf8';
   const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   // Portfolio context for Gemini
@@ -179,7 +179,9 @@ Always be positive and professional`;
       });
 
       if (!response.ok) {
-        throw new Error('Failed to get response from Gemini API');
+        const errorData = await response.json();
+        console.error('Gemini API Error:', errorData);
+        throw new Error(`Gemini API Error: ${JSON.stringify(errorData)}`);
       }
 
       const data = await response.json();
