@@ -14,7 +14,10 @@ export function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const GEMINI_API_KEY = 'AIzaSyDpv_Qlf2OcLJZUdbMQKnisdqc0tapSqf8';
+  // TODO: Replace with your own Gemini API key
+  // Get a free API key at: https://makersuite.google.com/app/apikey
+  // Make sure to set "Application restrictions" to "None" for development
+  const GEMINI_API_KEY = 'AIzaSyBCsjAI0ljubXsXQR3M63dOwcwLLLUb8Yc';
   const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   // Portfolio context for Gemini
@@ -153,6 +156,17 @@ Always be positive and professional`;
     const userMessage: Message = { role: 'user', content: question };
     setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
+
+    // Check if API key is set
+    if (GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+      const errorMessage: Message = { 
+        role: 'assistant', 
+        content: '⚠️ API key not configured. Please add your Gemini API key to use this feature.\n\nGet a free API key at: https://makersuite.google.com/app/apikey\n\nThen replace "YOUR_GEMINI_API_KEY_HERE" in the ChatBot.tsx file.' 
+      };
+      setMessages(prev => [...prev, errorMessage]);
+      setIsLoading(false);
+      return;
+    }
 
     try {
       // Call Gemini API
