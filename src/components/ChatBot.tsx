@@ -14,10 +14,10 @@ export function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  // TODO: Replace with your own Gemini API key
-  // Get a free API key at: https://makersuite.google.com/app/apikey
-  // Make sure to set "Application restrictions" to "None" for development
-  const GEMINI_API_KEY = 'AIzaSyBCsjAI0ljubXsXQR3M63dOwcwLLLUb8Yc';
+  // GEMINI API KEY - Uses environment variable from Vercel
+  // The API key is stored securely in Vercel Environment Variables
+  // For local development: add VITE_GEMINI_API_KEY to your .env file
+  const GEMINI_API_KEY = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY) || 'YOUR_GEMINI_API_KEY_HERE';
   const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   // Portfolio context for Gemini
