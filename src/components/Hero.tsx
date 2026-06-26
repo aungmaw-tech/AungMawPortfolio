@@ -1,5 +1,13 @@
 import React from "react";
-import { FileDown, FolderKanban } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  FileDown,
+  FolderKanban,
+  Network,
+  Server,
+  ShieldCheck,
+} from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Hero() {
@@ -8,12 +16,10 @@ export function Hero() {
     const header = document.querySelector("header");
 
     if (element && header) {
-      const headerHeight =
-        header.getBoundingClientRect().height;
-      const elementPosition =
-        element.getBoundingClientRect().top;
+      const headerHeight = header.getBoundingClientRect().height;
+      const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
-        elementPosition + window.scrollY - headerHeight - 16; // 16px extra padding
+        elementPosition + window.scrollY - headerHeight - 16;
 
       window.scrollTo({
         top: offsetPosition,
@@ -22,256 +28,132 @@ export function Hero() {
     }
   };
 
+  const proofPoints = [
+    "5+ years supporting business-critical IT operations",
+    "Windows, Linux, networking, CCTV/ELV, and cloud fundamentals",
+    "Bangkok-based and ready for enterprise support environments",
+  ];
+
+  const capabilityCards = [
+    {
+      icon: <Server className="h-5 w-5" />,
+      label: "Systems",
+      detail: "Windows / Linux setup, maintenance, and support",
+    },
+    {
+      icon: <Network className="h-5 w-5" />,
+      label: "Networks",
+      detail: "LAN, VLAN, WiFi, DHCP, DNS, and troubleshooting",
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5" />,
+      label: "Infrastructure",
+      detail: "CCTV/ELV deployment, remote support, and documentation",
+    },
+  ];
+
   return (
-    <section
-      id="about"
-      className="bg-gradient-to-b from-gray-50 to-white"
-    >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-12 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left: Text Content */}
-          <div className="space-y-4 lg:space-y-6 order-2 lg:order-1">
-            <div className="space-y-2 lg:space-y-3">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl text-[#1a1a1a] tracking-tight">
-                Reliable IT Support & System Administration
+    <section id="about" className="bg-white">
+      <div className="mx-auto max-w-[1440px] px-4 py-10 sm:px-8 lg:px-16 lg:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:gap-14">
+          <div className="max-w-3xl space-y-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#1E88E5]/20 bg-[#E3F2FD]/60 px-4 py-2 text-sm text-[#1565C0]">
+              <span className="h-2 w-2 rounded-full bg-[#1E88E5]" />
+              IT Support - System Administrator - Infrastructure Engineer
+            </div>
+
+            <div className="space-y-4">
+              <h1 className="max-w-4xl text-4xl leading-tight text-[#111827] sm:text-5xl lg:text-6xl">
+                Enterprise-ready IT support for stable infrastructure.
               </h1>
-              <p className="text-lg sm:text-xl text-[#1E88E5]">
-                Networking • Windows/Linux • Google Cloud •
-                CCTV/ELV Systems
+              <p className="max-w-2xl text-lg leading-8 text-gray-700 sm:text-xl">
+                I help teams keep networks, systems, cloud basics, and
+                security infrastructure dependable, documented, and easy to
+                support.
               </p>
             </div>
 
-            <p className="text-gray-700 leading-relaxed max-w-xl">
-              Hands-on experience in LAN/VLAN setups, system
-              installation, technical troubleshooting, cloud
-              basics, and CCTV deployment. Dedicated to
-              delivering reliable IT solutions with a focus on
-              efficiency and user satisfaction.
-            </p>
+            <div className="grid gap-3 text-sm text-gray-700 sm:grid-cols-3">
+              {proofPoints.map((point) => (
+                <div
+                  key={point}
+                  className="flex items-start gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1E88E5]" />
+                  <span className="leading-6">{point}</span>
+                </div>
+              ))}
+            </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 lg:pt-4">
+            <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
               <a
                 href="https://drive.google.com/uc?export=download&id=1a9VVW9_fsJzX-q6Xmu4X9fUUpUYlBEvQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial"
+                className="w-full sm:w-auto"
               >
-                <Button className="w-full sm:w-auto bg-[#1E88E5] hover:bg-[#1976D2] text-white px-6 py-6 rounded-lg">
-                  <FileDown className="w-5 h-5 mr-2" />
+                <Button className="h-12 w-full rounded-lg bg-[#1E88E5] px-6 text-white shadow-sm transition-all duration-200 hover:bg-[#1976D2] hover:shadow-md sm:w-auto">
+                  <FileDown className="mr-2 h-5 w-5" />
                   Download Resume
                 </Button>
               </a>
               <Button
                 onClick={() => scrollToSection("projects")}
                 variant="outline"
-                className="border-[#1E88E5] text-[#1E88E5] hover:bg-[#1E88E5] hover:text-white px-6 py-6 rounded-lg"
+                className="h-12 rounded-lg border-gray-300 px-6 text-gray-800 transition-all duration-200 hover:border-[#1E88E5] hover:bg-[#E3F2FD]/70 hover:text-[#1565C0]"
               >
-                <FolderKanban className="w-5 h-5 mr-2" />
+                <FolderKanban className="mr-2 h-5 w-5" />
                 View Projects
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
 
-          {/* Right: Professional Illustration */}
-          <div className="flex items-center justify-center order-1 lg:order-2">
-            <div className="relative w-full max-w-xs sm:max-w-md">
-              {/* Simple IT Illustration using SVG */}
-              <svg
-                viewBox="0 0 400 400"
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Background Circle */}
-                <circle
-                  cx="200"
-                  cy="200"
-                  r="180"
-                  fill="#E3F2FD"
-                  opacity="0.5"
-                />
+          <div className="relative">
+            <div
+              className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-br from-[#E3F2FD] via-white to-gray-100"
+              aria-hidden="true"
+            />
+            <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] lg:p-6">
+              <div className="mb-5 flex items-center justify-between border-b border-gray-100 pb-4">
+                <div>
+                  <p className="text-sm text-gray-500">Operational focus</p>
+                  <h2 className="text-xl text-[#111827]">
+                    Infrastructure support profile
+                  </h2>
+                </div>
+                <div className="rounded-full bg-[#E3F2FD] p-3 text-[#1E88E5]">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
+              </div>
 
-                {/* Monitor/Screen */}
-                <rect
-                  x="100"
-                  y="120"
-                  width="200"
-                  height="140"
-                  rx="8"
-                  fill="#1E88E5"
-                />
-                <rect
-                  x="110"
-                  y="130"
-                  width="180"
-                  height="110"
-                  rx="4"
-                  fill="#FFFFFF"
-                />
+              <div className="space-y-3">
+                {capabilityCards.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-xl border border-gray-200 bg-gray-50 p-4 transition-all duration-200 hover:border-[#1E88E5]/40 hover:bg-white"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-lg bg-white p-2 text-[#1E88E5] shadow-sm">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-[#111827]">{item.label}</h3>
+                        <p className="mt-1 text-sm leading-6 text-gray-600">
+                          {item.detail}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-                {/* Code Lines on Screen */}
-                <rect
-                  x="120"
-                  y="145"
-                  width="60"
-                  height="6"
-                  rx="3"
-                  fill="#1E88E5"
-                  opacity="0.6"
-                />
-                <rect
-                  x="120"
-                  y="160"
-                  width="120"
-                  height="6"
-                  rx="3"
-                  fill="#1E88E5"
-                  opacity="0.4"
-                />
-                <rect
-                  x="120"
-                  y="175"
-                  width="80"
-                  height="6"
-                  rx="3"
-                  fill="#1E88E5"
-                  opacity="0.6"
-                />
-                <rect
-                  x="120"
-                  y="190"
-                  width="100"
-                  height="6"
-                  rx="3"
-                  fill="#1E88E5"
-                  opacity="0.4"
-                />
-                <rect
-                  x="120"
-                  y="205"
-                  width="70"
-                  height="6"
-                  rx="3"
-                  fill="#1E88E5"
-                  opacity="0.6"
-                />
-
-                {/* Monitor Stand */}
-                <rect
-                  x="180"
-                  y="260"
-                  width="40"
-                  height="8"
-                  rx="4"
-                  fill="#424242"
-                />
-                <rect
-                  x="160"
-                  y="268"
-                  width="80"
-                  height="4"
-                  rx="2"
-                  fill="#424242"
-                />
-
-                {/* Server Icon (Left) */}
-                <g transform="translate(60, 280)">
-                  <rect
-                    width="60"
-                    height="70"
-                    rx="6"
-                    fill="#F5F5F5"
-                    stroke="#1E88E5"
-                    strokeWidth="2"
-                  />
-                  <circle
-                    cx="15"
-                    cy="15"
-                    r="4"
-                    fill="#4CAF50"
-                  />
-                  <circle
-                    cx="30"
-                    cy="15"
-                    r="4"
-                    fill="#4CAF50"
-                  />
-                  <rect
-                    x="10"
-                    y="25"
-                    width="40"
-                    height="4"
-                    rx="2"
-                    fill="#E0E0E0"
-                  />
-                  <rect
-                    x="10"
-                    y="35"
-                    width="40"
-                    height="4"
-                    rx="2"
-                    fill="#E0E0E0"
-                  />
-                  <rect
-                    x="10"
-                    y="45"
-                    width="40"
-                    height="4"
-                    rx="2"
-                    fill="#E0E0E0"
-                  />
-                </g>
-
-                {/* Cloud Icon (Right) */}
-                <g transform="translate(280, 290)">
-                  <ellipse
-                    cx="30"
-                    cy="25"
-                    rx="25"
-                    ry="18"
-                    fill="#1E88E5"
-                    opacity="0.3"
-                  />
-                  <ellipse
-                    cx="20"
-                    cy="30"
-                    rx="20"
-                    ry="15"
-                    fill="#1E88E5"
-                    opacity="0.4"
-                  />
-                  <ellipse
-                    cx="40"
-                    cy="30"
-                    rx="20"
-                    ry="15"
-                    fill="#1E88E5"
-                    opacity="0.4"
-                  />
-                </g>
-
-                {/* Network Connection Lines */}
-                <line
-                  x1="120"
-                  y1="310"
-                  x2="150"
-                  y2="200"
-                  stroke="#1E88E5"
-                  strokeWidth="2"
-                  strokeDasharray="4 4"
-                  opacity="0.5"
-                />
-                <line
-                  x1="310"
-                  y1="310"
-                  x2="260"
-                  y2="200"
-                  stroke="#1E88E5"
-                  strokeWidth="2"
-                  strokeDasharray="4 4"
-                  opacity="0.5"
-                />
-              </svg>
+              <div className="mt-5 rounded-xl border border-[#1E88E5]/20 bg-[#E3F2FD]/50 p-4">
+                <p className="text-sm leading-6 text-[#155A9F]">
+                  Built for recruiter scanning: role fit, technical evidence,
+                  and resume access are visible in the first view.
+                </p>
+              </div>
             </div>
           </div>
         </div>
