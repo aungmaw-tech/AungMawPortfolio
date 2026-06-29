@@ -26,18 +26,18 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 border-b" style={{ backgroundColor: "#1a1a2e", borderColor: "rgba(255,255,255,0.08)" }}>
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-4 lg:py-6 flex items-center justify-between">
         {/* Left: Name and Title */}
         <div className="flex flex-col">
-          <h1 className="text-xl lg:text-2xl text-[#1a1a1a] tracking-tight">Aung Maw</h1>
-          <p className="text-xs lg:text-sm text-gray-600 mt-0.5">IT Support & System Administrator</p>
+          <h1 className="text-xl lg:text-2xl tracking-tight" style={{ color: "#ffffff" }}>Aung Maw</h1>
+          <p className="text-xs lg:text-sm mt-0.5" style={{ color: "#94a3b8" }}>IT Support &amp; System Administrator</p>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-gray-700 hover:text-[#1E88E5] transition-colors"
+          className="lg:hidden p-2 transition-colors" style={{ color: "#94a3b8" }}
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -49,7 +49,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 About
               </button>
@@ -57,7 +57,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("skills")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Skills
               </button>
@@ -65,7 +65,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("experience")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Experience
               </button>
@@ -73,7 +73,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("projects")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Projects
               </button>
@@ -81,7 +81,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("resume")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Education
               </button>
@@ -89,7 +89,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("courses")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Courses
               </button>
@@ -97,7 +97,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("certificates")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Certificates
               </button>
@@ -105,7 +105,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-gray-700 hover:text-[#1E88E5] transition-colors"
+                className="transition-colors" style={{ color: "#94a3b8" }} onMouseEnter={e => (e.currentTarget.style.color='#1E88E5')} onMouseLeave={e => (e.currentTarget.style.color='#94a3b8')}
               >
                 Contact
               </button>
@@ -116,12 +116,12 @@ export function Header() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <nav className="lg:hidden border-t border-gray-200 bg-white">
+        <nav className="lg:hidden border-t" style={{ borderColor: "rgba(255,255,255,0.08)", backgroundColor: "#1a1a2e" }}>
           <ul className="px-4 py-4 space-y-2">
             <li>
               <button
                 onClick={() => scrollToSection("about")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 About
               </button>
@@ -129,7 +129,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("skills")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Skills
               </button>
@@ -137,7 +137,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("experience")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Experience
               </button>
@@ -145,7 +145,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("projects")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Projects
               </button>
@@ -153,7 +153,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("resume")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Education
               </button>
@@ -161,7 +161,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("courses")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Courses
               </button>
@@ -169,7 +169,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("certificates")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Certificates
               </button>
@@ -177,7 +177,7 @@ export function Header() {
             <li>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#1E88E5] hover:bg-gray-50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-lg transition-colors" style={{ color: "#94a3b8" }}
               >
                 Contact
               </button>

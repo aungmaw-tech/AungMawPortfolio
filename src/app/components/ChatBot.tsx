@@ -243,8 +243,8 @@ Always be positive and professional`;
       {/* Floating Chat Button with Speech Bubble */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
         {!isOpen && (
-          <div className="bg-white px-4 py-2 rounded-full shadow-lg text-sm text-gray-800 whitespace-nowrap animate-bounce">
-            Ready to bring me onto your team?
+          <div className="rounded-full shadow-lg whitespace-nowrap animate-bounce px-[1px] py-[8px] text-[11px]" style={{ backgroundColor: "#1E88E5", color: "#ffffff" }}>
+            Hiring? Let's talk!
           </div>
         )}
         <button

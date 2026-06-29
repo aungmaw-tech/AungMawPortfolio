@@ -9,11 +9,11 @@ import { Courses } from "./components/Courses";
 import { Certificates } from "./components/Certificates";
 import { Footer } from "./components/Footer";
 import { ChatBot } from "./components/ChatBot";
-import "./styles/globals.css";
+import "../styles/globals.css";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: "#1a1a2e" }}>
       <Header />
       <main>
         <Hero />
